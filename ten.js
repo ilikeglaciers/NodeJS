@@ -14,7 +14,17 @@
 var http = require('http');
 
 var server = http.createServer(function(req,res){
-    //a server function takes request & response as two parameters
-    
+    console.log('Request was made: '+req.url);
+    res.writeHead(200,{'Content-Type':'text/plain'});  //writing response header
+    res.end('Hey Buddy!');                             //ending the response
 });
 
+server.listen(3000,'127.0.0.1');
+console.log('Listening on port 3000!');
+
+
+
+    //a server function takes request & response as two parameters
+    //There are response and request headers sent along with them.
+    //Headers are extra information about the res/req
+    //check on browser: 127.0.0.1:3000
